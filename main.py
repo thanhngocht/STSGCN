@@ -29,10 +29,7 @@ net = construct_model(config)
 batch_size = config['batch_size']
 num_of_vertices = config['num_of_vertices']
 graph_signal_matrix_filename = config['graph_signal_matrix_filename']
-if isinstance(config['ctx'], list):
-    ctx = [mx.gpu(i) for i in config['ctx']]
-elif isinstance(config['ctx'], int):
-    ctx = mx.gpu(config['ctx'])
+ctx = mx.cpu()
 
 loaders = []
 true_values = []
